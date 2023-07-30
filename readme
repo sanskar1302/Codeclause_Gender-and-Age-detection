@@ -1,0 +1,36 @@
+# Real-time Age and Gender Estimation
+
+This project uses OpenCV and pre-trained deep learning models to perform real-time age and gender estimation from a webcam feed. It detects faces in the video feed, estimates the age and gender of each detected face, and overlays the results on the video.
+
+## How it works
+
+The `faceBox` function is used to detect faces in the video frame using the OpenCV deep neural network (DNN) module. It then crops the detected faces and feeds them into separate pre-trained age and gender classification models.
+
+The pre-trained models used in this project are as follows:
+- Face Detection Model: `opencv_face_detector.pbtxt`, `opencv_face_detector_uint8.pb`
+- Age Classification Model: `age_deploy.prototxt`, `age_net.caffemodel`
+- Gender Classification Model: `gender_deploy.prototxt`, `gender_net.caffemodel`
+
+The age is classified into the following groups:
+- (0-2)
+- (4-6)
+- (8-12)
+- (15-20)
+- (25-32)
+- (38-43)
+- (48-53)
+- (60-100)
+
+The gender is classified as either "Male" or "Female".
+
+## Requirements
+
+To run this project, you need to have OpenCV installed in your Python environment.
+
+## Usage
+
+1. Clone the repository and navigate to the project directory.
+2. Run the Python script `age_gender_estimation.py`.
+3. The webcam feed will open, and faces will be detected in real-time.
+4. The age and gender of each detected face will be displayed on the video.
+
